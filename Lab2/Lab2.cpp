@@ -4,23 +4,25 @@
 // Description: Mileage Reimbursment Calculator
 
 #include "stdafx.h"
-#define R .35 //Setting rate as a constant
+#define RATE .35 //Setting rate as a constant
 
 
 int main()
 {
-	double Beg_OD, End_OD, TM, TC;//Variable declaration
+	double begOD, endOD, totalMiles, totalReimbursment;//Variable declaration
 	
 	printf("Mileage Reimbursement Calculator\n\n");//Title of program on line one
-	printf("Enter beginning odometer reading\n");//Title of input one
-	scanf("%lf", &Beg_OD);//Input one
-	printf("Enter ending odometer reading\n");//Title of input two
-	scanf("%lf", &End_OD);//Input two
-	TM = End_OD - Beg_OD;//Calculations
-	TC = R * TM;
-	printf("You traveled: %.2f miles\n\n", TM);//Output one
-	printf("Your reimbursement is $%.2f\n\n", TC);//Output two
+	printf("Enter beginning odometer reading\n");//Title of input: beginning odometer
+	scanf("%lf", &begOD);//Input beginning: odometer
+
+	printf("Enter ending odometer reading\n");//Title of input: ending odometer
+	scanf("%lf", &endOD);//Input: ending odometer
+
+	totalMiles = endOD - begOD;//total miles caclulation
+	totalReimbursment = RATE * totalMiles;//total reimbursment calculation
+	
+	printf("You traveled: %.2f miles\n\n", totalMiles);//Output: total miles
+	printf("Your reimbursement is $%.2f\n\n", totalReimbursment);//Output: total reimbursment
 
     return 0;
 }//End program
-
